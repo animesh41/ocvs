@@ -1,64 +1,35 @@
 ---
 duration: PT0H60M0S
-description: Create and configure a virtual network on Oracle Cloud Infrastructure.
-level: Beginner
-roles: DevOps;Developer
+description: Configure Public DNS Zone for OCVS SDDC workloads on NSX-T Overlay
+level: Intermediate
+roles: IT;Power User;Technology Manager
 lab-id: 765b4ce1-5c77-4c9d-b74b-fe33689c45e2
-products: phoenix-1/iaas;en/cloud/oracle-cloud-infrastructure/oci
+products: en/cloud/oracle-cloud-infrastructure/vmware-solution
 keywords: Networking,IaaS
 inject-note: true
 ---
-# Tutorial Title - Use title casing and imperative verb, not gerund (E.g., Create a Virtual Cloud Network)
+# Tutorial Title - Configure Public DNS Zone for OCVS SDDC workloads on NSX-T Overlay
 
 ## Introduction
 
-Provide a brief description of the lab. This can include background information, intended audience, and important notes for getting started. 
-
-**Note:** This is a sample note. Copy and edit this note throughout your tutorial as needed.
-**Tip:** This is a sample tip. Copy and edit this tip throughout your tutorial as needed.
+This tutorial is a step-by-step guide for configuring public DNS resolution for workloads running on NSX-T Overlay networks within Oracle Cloud VMware Solution.The Oracle Cloud Infrastructure (OCI) team’s focus is to enable you, our customers, so you can perform this administrative task in your environment when necessary by following this tutorial.
 
 ### Objectives
 
-List what users can expect to accomplish upon completing this tutorial/lab.
-
-- Learn how to provision a new Autonomous Database
-- Objective 2
-- Objective 3
+The Objective is to let VMware SDDC workloads running on the NSX-T Overlay networks to access the Public DNS servers out of the OCVS SDDC environment.
 
 ### Prerequisites
 
-List what users are expected to complete or have before starting this tutorial/lab. This section is optional; delete if not needed.
-
-- Prerequisite 1
-- Prerequisite 2
-- Prerequisite 3
-
-<!-- Create as many step sections as needed. If you need only one step section, remove all other step sections and the text "Step 1: " from your step title. -->
+VMware SDDC within your tenancy with appropriate permissions
+Overlay Network Configuration on NSX-T
 
 ## Step 1: Step title - use sentence casing and imperative verb
 
-Enter a brief description here if needed.
+For the below configuration and example, we will use the well-known Google DNS Server ip :8.8.8.8.
+We will be configuring DNS forwarding on NSX-T to allow SDDC VMs to forward their DNS queries to Google DNS servers
 
-1. Enter your first step. Make sure to put UI labels and text in **bold**.
+1.	Login to the vCenter and setup a test VM. In this example, we are using Ubuntu 20.04 and is attached to an Overlay NSX-T network. 
 
-   Provide more step info here if needed.
-
-1. Enter your second step. This is an example of a `code phrase`.
-
-1. Enter your third step. This is an example of a code block:
-
-   ```
-   $ cd ~
-   $ mkdir git
-   $ cd git
-   $ git config --system core.longpaths true
-   ```
-   This is another example of a code block, but with the second line indented:
-   
-   ```
-   # reboot
-        The system is going down for reboot NOW!
-   ```
 
 ## Step 2: Create a VCN
 
@@ -90,19 +61,11 @@ A virtual cloud network (VCN) is a network that you define in Oracle Cloud Infra
 
 1. Third step.
 
-## Next Steps
-
-Provide information about the next tutorial/lab. Alternatively, provide links to additional resources. This section is optional; delete if not needed.
-
-- [Sample link - Oracle](https://www.oracle.com)
-- [Sample link - Oracle](https://www.oracle.com)
-- [Sample link - Oracle](https://www.oracle.com)
-
 ## Acknowledgements
 
 List the names and title of authors and contributors. This section is optional; delete if not needed.
 
-- **Authors** - name (title), name (title)
+- **Authors** - Animesh Dixit (Principal Cloud Architect), name (title)
 - **Contributors** - name (title), name (title)
 
 ## Learn More
