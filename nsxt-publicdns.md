@@ -23,7 +23,7 @@ The Objective is to let VMware SDDC workloads running on the NSX-T Overlay netwo
 VMware SDDC within your tenancy with appropriate permissions
 Overlay Network Configuration on NSX-T
 
-## Step 1: Step title - use sentence casing and imperative verb
+## Deploy a Test VM 
 
 For the below configuration and example, we will use the well-known Google DNS Server ip :8.8.8.8.
 We will be configuring DNS forwarding on NSX-T to allow SDDC VMs to forward their DNS queries to Google DNS servers
@@ -31,29 +31,7 @@ We will be configuring DNS forwarding on NSX-T to allow SDDC VMs to forward thei
 1.	Login to the vCenter and setup a test VM. In this example, we are using Ubuntu 20.04 and is attached to an Overlay NSX-T network. 
 
 
-## Step 2: Create a VCN
-
-A virtual cloud network (VCN) is a network that you define in Oracle Cloud Infrastructure. It includes subnets, route tables, and gateways.
-
-* When you create PaaS service instances, if you want a public subnet in the `ManagedCompartmentForPaaS` compartment to be assigned automatically to your instances, then skip this section of the tutorial, and go directly to [Create Object Storage Buckets](https://docs.oracle.com/en/cloud/paas/java-cloud/tutorial-infrastructure-prerequisites/#section_4).
-
-* If you want to attach your PaaS service instances to private or public subnets that you create, then follow the instructions in this section to create the VCN and subnets. You must do this the first time you create an Oracle PaaS instance on Oracle Cloud Infrastructure. For subsequent PaaS instances, you can use either the same VCN or a new VCN. This choice is based on whether the PaaS service depends on other PaaS services. For example, a Java Cloud Service instance must be in the same VCN as the Database Cloud Service deployment with which it is associated.
-
-1. In the Oracle Cloud Infrastructure web console, in the region-selector field near the upper right corner, select the region in which you want to create the Oracle PaaS service instances.
-
-   **Note:** Select a region that's within the default data region of your account. For example, if your default data region is EMEA, then select eu-frankfurt-1 or uk-london-1.
-   
-   ![](images/select-region-oci.png "select an Oracle Cloud Infrastructure region") <!-- Sample standalone image -->
-   
-   [Description of the illustration select-region-oci.png](files/select-region-oci.txt) <!-- Sample link to non-image asset -->
-   
-1. Click ![](images/dashboard_menu.png "Services menu") near the upper left corner of the web console. <!-- Sample inline image -->
-
-1. Under **Networking**, select **Virtual Cloud Networks**.
-
-1. On the Virtual Cloud Networks page, click **Create Virtual Cloud Network**.
-
-## Step 3: Step title - use sentence casing and imperative verb
+## Configure a Public DNS Zone with the Public DNS Server IP
 
 1. First step.
 
