@@ -8,7 +8,7 @@ products: en/cloud/oracle-cloud-infrastructure/vmware-solution
 keywords: Networking,IaaS
 inject-note: true
 ---
-# Tutorial Title - Configure Public DNS Zone for OCVS SDDC workloads on NSX-T Overlay
+# Configure Public DNS Zone for OCVS SDDC workloads on NSX-T Overlay
 
 ## Introduction
 
