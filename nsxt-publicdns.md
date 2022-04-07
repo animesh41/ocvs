@@ -36,23 +36,46 @@ Login to the vCenter and setup a test VM. In this example, we are using Ubuntu 2
 
 1. Under DNS Zones, create a new DNS Zone as Public and set the Public DNS server , in this case 8.8.8.8.
 
+<img width="865" alt="image" src="https://user-images.githubusercontent.com/12230297/162179599-ab0e1ade-cc80-402e-923f-0bd59abbe597.png">
+
+
 2. Under DNS Services, add the DNS Service IP (192.168.30.254) and attach to Tier1 Gateway. Use the DNS zone created in previous step as the Default DNS zone.
+
+<img width="863" alt="image" src="https://user-images.githubusercontent.com/12230297/162179654-38082cf2-b82a-4818-aec7-479ab603273f.png">
+
 
 ## Configure NSX-T Overlay Segment and DHCP Configuration
 
 3. Create a new Overlay Segment on NSX-T and configure DNS by adding the DNS service IP. The VMs or Clients attached to this segment will use the DNS service IP as the endpoint. Use the edit DHCP config
 
+<img width="866" alt="image" src="https://user-images.githubusercontent.com/12230297/162179709-1133797d-0b15-42cb-bfc3-f662dad13b36.png">
+
+<img width="868" alt="image" src="https://user-images.githubusercontent.com/12230297/162179766-782ff9c4-d2a6-48ad-99a8-7686a5488221.png">
+
+
 4. Validate that the settings have taken effect on the Ubuntu machine. If the machine is already powered on, a reboot may be required.
+
+<img width="694" alt="image" src="https://user-images.githubusercontent.com/12230297/162179821-34a9a558-7eca-45eb-a62d-01d1b2e35dee.png">
+
 
 ## Configure NSX-T NAT Rules
 
 5. Next, configure NSX-T NAT rule to allow SDDC VMs to access external networks or public networks. Here, we are doing SNAT for the Segment network 192.168.20.0/24 to NSX-T HA VIP IP
 
+<img width="864" alt="image" src="https://user-images.githubusercontent.com/12230297/162179898-b78b59df-aec8-46c3-888a-0e24f46c74a5.png">
+
+
 6. Similarly, as the DNS Service IP is altogether a different IP for it to forward requests to 8.8.8.8, a separate NAT rule must be written. Here, we are writing a SNAT rule for 192.168.30.254/32 IP 
+
+<img width="866" alt="image" src="https://user-images.githubusercontent.com/12230297/162179975-17312f8e-e2f2-4ab7-b2c1-678308fb4e91.png">
+
 
 ## Edit VCN Configuration
 
 8.	Now, that the configuration is complete from NSX-T end, for the DNS query response to reach back to the SDDC VMs, a return route is required on the VCN NSX Edge Uplink1 route tables for the segments and the DNS service IP. 
+
+<img width="871" alt="image" src="https://user-images.githubusercontent.com/12230297/162180029-ac64a9a5-2cb4-4cb2-a575-20320a59b588.png">
+
 
 If everything is good, then once you try to ping google.com or anything else on internet it should be able to resolve from the VM running on NSX-T overlay.
 
