@@ -74,7 +74,8 @@ We will be configuring DNS forwarding on NSX-T to allow SDDC VMs to forward thei
 
 8.	Now, that the configuration is complete from NSX-T end, for the DNS query response to reach back to the SDDC VMs, a return route is required on the VCN NSX Edge Uplink1 route tables for the NSX-T overlay segments and the DNS service IP. Add the below route tables.
 
-<img width="871" alt="image" src="https://user-images.githubusercontent.com/12230297/162180029-ac64a9a5-2cb4-4cb2-a575-20320a59b588.png">
+<img width="808" alt="image" src="https://user-images.githubusercontent.com/12230297/162250054-ee857adc-5181-4705-8d3a-0e360c8434a7.png">
+
 
 
 If everything is good, then once you try to ping google.com or anything else on internet it should be able to resolve from the VM running on NSX-T overlay.
