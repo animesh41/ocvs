@@ -30,6 +30,7 @@ We will be configuring DNS forwarding on NSX-T to allow SDDC VMs to forward thei
 
 Login to the vCenter and setup a test VM. In this example, we are using Ubuntu 20.04 and is attached to an Overlay NSX-T network. 
 
+<img width="776" alt="image" src="https://user-images.githubusercontent.com/12230297/162179421-7bc034b2-a8de-46f6-9453-ef20cc8d8334.png">
 
 ## Configure a Public DNS Zone with the Public DNS Server IP
 
