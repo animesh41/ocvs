@@ -85,8 +85,8 @@ If everything is good, then once you try to ping google.com or anything else on 
 
 List the names and title of authors and contributors. This section is optional; delete if not needed.
 
-- **Authors** - Animesh Dixit (Principal Cloud Architect), name (title)
-- **Contributors** - name (title), name (title)
+- **Authors** - Animesh Dixit (Principal Cloud Architect)
+- **Contributors** - 
 
 ## Learn More
 
